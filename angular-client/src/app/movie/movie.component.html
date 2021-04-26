@@ -1,0 +1,24 @@
+<div class="movies">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="movie" *ngFor="let movie of movies; let i=index">
+
+            <div class="movie-poster">
+                <img src="https://image.tmdb.org/t/p/w500/{{movie.poster}}">
+            </div>
+
+            <div class="movie-info">
+                <h3>{{movie.title}} ({{movie.year}})</h3>
+                <h5>{{movie.director}}</h5>
+            </div>
+
+            <input type='text' formArrayName='movie_ids' value={{movie.id}} style='display: none;'>
+            <input type="range" min="0" max="10" formArrayName="ratings" value="0" (change)="addRating(i, $event)">
+
+        </div>
+        
+        <input type="submit" value="Submit">
+    </form>
+    
+</div>

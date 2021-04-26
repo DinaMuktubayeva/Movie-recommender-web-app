@@ -1,0 +1,14 @@
+<div class="movies">
+    <div class="movie" *ngFor="let movie of movies; let i=index">
+
+        <div class="movie-poster">
+            <img src="https://image.tmdb.org/t/p/w500/{{movie.poster}}">
+        </div>
+
+        <div class="movie-info">
+            <h3>{{movie.title}} ({{movie.year}})</h3>
+            <h5>{{movie.director}}</h5>
+        </div>
+
+    </div>
+</div>
